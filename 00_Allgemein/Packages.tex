@@ -1,0 +1,214 @@
+% Erklärender Text zu dieser Datei --------------------------------------------------------
+% Die Datei Packages.tex dient als zentrale Datei, in der alle genutzten Packages geladen und konfiguriert werden.
+% Basierend auf den Anforderungen sind ggf. Konfigurationen vereinzelt zu ändern - entsprechende Stellen sind mit %TODO gekennzeichnet.
+% Beispiele für solche Anforderungen sind
+%  - Package biblatex: Definition, des Zitationsstils und Aufbau des Literaturverzeichnisses; Default ist IEEE, Konfiguration für APA ist hinterlegt
+%  - Package minted: Definition, wie Source Code von Sprachen dargestellt werden soll
+%  - Zur korrekten Darstellung des Inhaltsverzeichnisses die "breiteste" Seitenzahl angeben
+%
+% HINWEIS: Die Reihenfolge, in der Packages geladen werden ist wichtig. Hinweise aus den Dokumentationen der einzelnen Packages sind daher unbedingt zur berücksichtigen, wenn weitere Packages aufgenommen werden sollen.
+% -----------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{lmodern}
+\usepackage{xspace} % Leerzeichen hinter parameterlosen Makros nicht als Endzeichen interpretieren
+\usepackage{graphicx} %Abbildungen
+\usepackage{pdfpages} %Einfügen von PDF-Seiten
+\includepdfset{scale=0.7, frame, pagecommand={\thispagestyle{plain}}}
+\graphicspath{{04_Artefakte/01_Abbildungen/}}
+\usepackage{caption} % Bildunterschriften
+\usepackage{subcaption} % https://www.ctan.org/pkg/subcaption
+
+\usepackage{tabularx} % Tabellen
+\usepackage{booktabs} % Bessere Tabellen
+\usepackage[longtable]{multirow}
+\usepackage{longtable}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bbm}
+
+\usepackage{xcolor}
+%\usepackage{chngcntr} % fortlaufende Nummerierung von Fußnoten
+
+\usepackage[colorinlistoftodos]{todonotes} % to disable todos use option disable, alternatively use obeyDraft or obeyFinal
+\usepackage{blindtext}
+
+\usepackage{microtype} % auskommentieren moeglich, wenn Typografie nicht zufriedenstellend
+
+\usepackage[bottom]{footmisc} % https://golatex.de/viewtopic.php?f=21&t=24052
+% Verlinkung und PDF Bookmarks https://tex.stackexchange.com/a/83051
+\usepackage[nospace]{varioref}
+% extensions keep all links black, only urls are blue: https://tex.stackexchange.com/a/401885/220502
+\usepackage[hidelinks, colorlinks, allcolors=., urlcolor=blue]{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+    pdftitle={\titel},
+    pdfauthor={\autor},
+    pdfcreator={\autor},
+    pdfsubject={\titel},
+    pdfkeywords={\titel},
+}
+\usepackage{cleveref}
+
+% Literaturverzeichnis und Quellenverwaltung mittels biblatex
+%TODO Änderungen des Zitationsstils und Literaturverzeichnisses
+\usepackage[%
+backend=biber,
+style=ieee,
+dashed=false,
+%TODO Für APA-Stil die obenstehende Konfiguration auskommentieren und Kommentare von nachfolgenden Zeilen entfernen
+%sortlocale=auto,
+%sorting=nyt,
+%style=apa
+]{biblatex}
+
+% Verwalten von Abkuerzungen und einem Abkuerzungsverzeichnis
+\usepackage[printonlyused]{acronym} % https://www.ctan.org/pkg/acronym
+
+% Packages for forcing floats https://robjhyndman.com/hyndsight/latex-floats/
+\usepackage{afterpage}
+\usepackage[section]{placeins}
+\usepackage{censor}
+
+
+% Erstellen eines Symbolverzeichnisses
+\usepackage[intoc, german, stdsubgroups]{nomencl} % https://www.ctan.org/pkg/nomencl
+\usepackage{siunitx}
+\newcommand{\nomunit}[1]{%
+    \renewcommand{\nomentryend}{\hspace*{\fill}\si{#1}}}
+\makenomenclature
+
+%TODO Definition der Darstellung von Source Code
+\usepackage[newfloat, cache]{minted} % https://www.ctan.org/pkg/minted
+\SetupFloatingEnvironment{listing}{name=Listing, placement=b}
+\SetupFloatingEnvironment{listing}{listname={Listingverzeichnis}}
+\setminted[java]{linenos, fontsize=\footnotesize, frame=lines, breaklines, breakbefore={.}}
+\usemintedstyle{borland}
+% new environment for listings longer than one page; https://tex.stackexchange.com/a/53540
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
+\usepackage{csquotes}
+
+
+% Darstellung von Algorithmen und Pseudocode
+% do NOT use option naturalnames if you compile with pdflatex and use hyperref
+\usepackage[linesnumbered, commentsnumbered, ruled]{algorithm2e} 
+\renewcommand{\listalgorithmcfname}{Algorithmusverzeichnis}
+\addtotoclist[float]{loa}
+\renewcommand\listofalgorithms{\listoftoc[{\listalgorithmcfname}]{loa}}
+%\SetAlFnt{\small \normalfont \sffamily} 
+\SetAlFnt{\footnotesize} 
+
+
+% Erstellung neuer Verzeichnisse; Code weitgehend von Markus Kohm und komascript.de 
+\DeclareNewTOC[%
+  owner=anhang,
+  listname={Anhangsverzeichnis},% Titel des Verzeichnisses
+]{atoc}
+
+\DeclareNewTOC[%
+  type=equation,
+  listname={Formelverzeichnis},
+  tocentrynumwidth=2.3em,
+]{loe}
+
+\makeatletter
+\renewcommand\@pnumwidth{2em} % vermeiden von overful hbox im Inhaltsverzeichnis
+
+\AfterTOCHead[atoc]{\let\if@dynlist\if@tocleft}
+\newcommand*{\useappendixtocs}{%
+  \renewcommand*{\ext@toc}{atoc}%
+  \scr@ifundefinedorrelax{hypersetup}{}{% damit es auch ohne hyperref funktioniert
+    \hypersetup{bookmarkstype=atoc}%
+  }%
+}
+\newcommand*{\usestandardtocs}{%
+  \renewcommand*{\ext@toc}{toc}%
+  \scr@ifundefinedorrelax{hypersetup}{}{% damit es auch ohne hyperref funktioniert
+    \hypersetup{bookmarkstype=toc}%
+  }%
+  \renewcommand*{\ext@figure}{lof}%
+  \renewcommand*{\ext@table}{lot}%
+}
+\scr@ifundefinedorrelax{ext@toc}{%
+  \newcommand*{\ext@toc}{toc}
+  \renewcommand{\addtocentrydefault}[3]{%
+    \expandafter\tocbasic@addxcontentsline\expandafter{\ext@toc}{#1}{#2}{#3}%
+  }
+}{}
+\newcommand*{\@currententry}{}
+% Zwei amsmath-Anweisungen ändern:
+\g@addto@macro\make@display@tag{\set@currententry}%
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip\@@italiccorr)}%
+  \set@currententry}
+\newcommand*{\set@currententry}{%
+  \typeout{set current entry}%
+  \ifx\@currententry\@empty\else
+    \addcontentsline{loe}{equation}{\protect\numberline{\@currentlabel}%
+      \@currententry}%
+    \global\let\@currententry\@empty
+  \fi
+}
+% Neue Benutzeranweisung
+\newcommand*{\equationentry}[1]{%
+  \gdef\@currententry{#1}%
+}
+
+\makeatother
+
+\usepackage{xpatch}
+\xapptocmd\appendix{%
+  \useappendixtocs
+  \pdfbookmark{Anhangsverzeichnis}{anhangsverzeichnis}
+  \listofatocs
+  \addcontentsline{toc}{chapter}{Anhangsverzeichnis}
+  \bookmarksetupnext{level=-1}
+}{}{}
+
+% Pakete, die fuer Informatik Sinn ergeben koennten
+% \usepackage{bytefield} % illustration of fields of data https://www.ctan.org/pkg/bytefield
+
+
+% Uebersetzung fuer Eintraege im Abkuerzungsverzeichnis - Code uebernommen von https://tex.stackexchange.com/a/135507
+\makeatletter
+\newcommand{\acroforeign}[1]{}
+
+% patch the environment to print the foreign definition:
+\AtBeginEnvironment{acronym}{%
+  \def\acroforeign#1{ (#1)}%
+}
+
+% patch the acronym definition to safe the foreign definition:
+\expandafter\patchcmd\csname AC@\AC@prefix{}@acro\endcsname
+  {\begingroup}
+  {\begingroup\def\acroforeign##1{\csdef{ac@#1@foreign}{##1, }}}
+  {}
+  {\fail}
+
+% %   renew the first output to include the foreign definition if given:
+\renewcommand*{\@acf}[2][\AC@linebreakpenalty]{%
+  \ifAC@footnote
+    \acsfont{\csname ac@#2@foreign\endcsname\AC@acs{#2}}%
+    \footnote{\AC@placelabel{#2}\AC@acl{#2}{}}%
+  \else
+    \acffont{%
+      \AC@placelabel{#2}\AC@acl{#2}%
+      \nolinebreak[#1] %
+      \acfsfont{(\acsfont{\csname ac@#2@foreign\endcsname\AC@acs{#2}})}%
+    }%
+  \fi
+  \ifAC@starred\else\AC@logged{#2}\fi
+}
+\makeatother
+
+% Adjusting the width that is reserved for the  pagenumber in listings
+% https://projekte.dante.de/DanteFAQ/Verzeichnisse#2
+% https://de.comp.text.tex.narkive.com/fAP3Znev/overfull-hbox-im-inhaltsverzeichnis
+\makeatletter
+\AtBeginDocument{
+\newlength{\mylen}
+\setlength{\mylen}{\widthof{XVIII}} %TODO hier Text eintragen, der der breitesten Seitennummer im Inhaltsverzeichnis oder einem der anderne Verzeichnisse entspricht
+\renewcommand*\@pnumwidth{\the\mylen}
+}
+\makeatother

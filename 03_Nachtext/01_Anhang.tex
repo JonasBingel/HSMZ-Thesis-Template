@@ -1,0 +1,29 @@
+% Erklärender Text zu dieser Datei --------------------------------------------------------
+% Die Datei 01_Anhang.tex dient der Definition des Anhangs und dessen Reihenfolge.
+% -----------------------------------------------------------------------------------------
+\appendix
+\clearpage
+\pdfbookmark{Anhang}{anhang}
+\chapter{Anhang Listing}
+\addcontentsline{toc}{chapter}{Anhang}
+
+% Anhang nachfolgend einfügen ----------------------------------------------------------------------
+
+\begin{longlisting}
+\label{app:longlisting}
+\caption{Langes Listing in Java}
+\label{listing:longlisting}
+\inputminted{java}{04_Artefakte/03_Listings/Daten.java}
+\end{longlisting}
+
+\chapter{Anhang Auszug PDF}
+\label{app:auszugPDF}
+\begin{figure}[h]
+    \centering
+    \frame{\includegraphics[width=0.7\linewidth]{04_Artefakte/BeispielPDF.pdf}}
+    \caption[Beispiel für den Auszug aus einer PDF]{Beispiel für den Auszug aus einer PDF im Anhang}
+\end{figure}
+
+\chapter{Anhang Tabelle}
+\label{app:longtable}
+\input{04_Artefakte/02_Tabellen/LongSample}

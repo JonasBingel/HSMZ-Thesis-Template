@@ -1,0 +1,47 @@
+% Erklärender Text zu dieser Datei --------------------------------------------------------
+% Die Datei Befehle.tex dient der Definition von Custom-Anweisungen, sodass diese in den restlichen Dateien genutzt werden können. 
+% Custom-Anweisungen eigenen sich inbesondere als Variablen für Fachbegriffe, sodass sichergestellt ist, dass diese in der gesamten Arbeit einheitlich geschrieben sind und zentral geändert werden können.
+% Zudem enthält die Datei bereits Anweisungen für häufig genutzte Abkürzungen.
+% -----------------------------------------------------------------------------------------
+
+% Befehle zu Abkuerzungen --------------------------------------------------------------
+% Die gelisteten Befehle für Abkürzungen stammen aus github.com/StefanMacke/latex-vorlage-fiae/blob/master/Allgemein/Befehle.tex
+
+% Die Anweisung \, erzeugt einen kurzen Abstand und wird bei Abkuerzungen oder zwischen Zahlen und Masseinheiten verwendet
+\newcommand{\bs}{$\backslash$\xspace}
+\newcommand{\ua}{\mbox{u.\,a.}\xspace}
+\newcommand{\oa}{\mbox{o.\,a.}\xspace}
+\newcommand{\bspw}{bspw.\xspace}
+\newcommand{\bzw}{bzw.\xspace}
+\newcommand{\ca}{ca.\xspace}
+\newcommand{\dahe}{\mbox{d.\,h.}\xspace}
+\newcommand{\etc}{etc.\xspace}
+\newcommand{\eur}[1]{\mbox{#1\,\texteuro}\xspace}
+\newcommand{\evtl}{evtl.\xspace}
+\newcommand{\ggfs}{ggfs.\xspace}
+\newcommand{\Ggfs}{Ggfs.\xspace}
+\newcommand{\gqq}[1]{\glqq{}#1\grqq{}} % Anführungszeichen oben und unten
+\newcommand{\idR}{i.d.R.\xspace}
+\newcommand{\inkl}{inkl.\xspace}
+\newcommand{\insb}{insb.\xspace}
+\newcommand{\usw}{usw.\xspace}
+\newcommand{\Vgl}{Vgl.\xspace}
+\newcommand{\sogn}{sogn.\xspace}
+\newcommand{\zB}{\mbox{z.\,B.}\xspace}
+\newcommand{\engl}{engl.\xspace}
+\newcommand{\dt}{dt.\xspace}
+
+% Befehle zu Fachbegriffen --------------------------------------------------------------
+% Es ist empfehlenswert alle Fachbegriffe als Anweisung zu deklarieren, damit diese einheitlich sind und zentral geändert werden können
+
+% In der folgenden Zeile ein Beispiel für den Begriff "Q-Learning", sodass im Text die Anweisung \qlearning genutzt werden kann, welche zu "Q-Learning" übersetzt wird 
+%\newcommand{\qlearning}{Q-Learning\xspace}
+
+
+% Custom Anweisungen ------------------------------------------------------------------
+% Anweisung um mehrere PDF-Seiten einzufügen
+\newcommand\includepdfWithChapter[4]{%
+\includepdf[pages={#1}, pagecommand={\chapter{#3}}]{#4}
+\includepdf[pages={#2}]{#4}
+}
+

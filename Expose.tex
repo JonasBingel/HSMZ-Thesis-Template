@@ -1,0 +1,78 @@
+%-----------------------------------------------------------------------------------------
+%  Dieses Projekt wurde erstellt mit der LaTeX Vorlage von Jonas Bingel
+%  Die LaTeX Vorlage kann heruntergeladen werden unter: github.com/JonasBingel/HSMZ-Thesis-Template
+%  
+% -----------------------------------------------------------------------------------------
+
+% Erklärender Text zu dieser Datei --------------------------------------------------------
+% Die Datei Arbeit.tex ist die Hauptdatei, die dem LaTeX-Kompiler übergeben wird.
+% Diese Datei ist zu verwenden, wenn das Expose erstellt werden soll.
+% In dieser Datei wird 
+%  - das Dokument erstellt und alle anderen tex-Dateien werden geladen.
+%  - die .bib-Datei eingebunden zur Bereitstellung der Quellen
+%  - die Struktur des Dokuments wird definiert
+% -----------------------------------------------------------------------------------------
+
+\documentclass[
+ngerman, % neue Deutsche Rechtschreibung
+headings=normal, % normale Headings
+captions=tableheading, % Positioniert Captions über Tabellen
+listof=totoc,
+bibliography=totoc,
+%usegeometry, % Auskommentieren wenn Package geometery verwendet wird
+overfullrule, % entfernen nach abschluss der bearbeitung
+% Default Values, die scrreprt nutzt
+%oneside, % Einseitige Seitengenerierung
+%11pt, % Font size
+% a4paper, % paper
+]{scrreprt}
+\KOMAoptions{%
+  DIV=12,
+  parskip=half*,
+% %BCOR=korrektur, % absoluter Wert der Bindekorrektur
+}
+
+\include{00_Allgemein/Metadaten}
+\include{00_Allgemein/Packages}
+\include{00_Allgemein/Befehle}
+
+% Typesetting options
+
+\widowpenalty=10000     % Hurenkinder
+\clubpenalty=10000      % Schusterjungen
+
+\addbibresource{sample.bib}
+% Wegen dem folgenden Befehl werden im Literaturverzeichnis alle Quellen gelistet, die in der .bib Datei enthalten sind. 
+% Wird der Befehl entfernt, werden nur die Quellen gelistet, die auch zitiert werden.
+% Der Befehl ist also beim Expose dringend notwendig.
+\nocite{*} 
+\newcounter{romanConsecutive}
+
+\begin{document}
+\include{00_Allgemein/ToDo}
+
+\pagestyle{empty}
+\renewcommand*{\chapterpagestyle}{empty}
+% Einkommentieren, wenn Sperrvermerk notwendig ist 
+%\include{01_Vortext/01_Sperrvermerk}
+\include{01_Vortext/02_Titelseite}
+% Einkommentieren, wenn Erklärung notwendig sein sollte
+%\include{01_Vortext/03_Erklaerung}
+
+\pagestyle{plain}
+\renewcommand*{\chapterpagestyle}{plain}
+\pagenumbering{Roman}
+
+\setcounter{romanConsecutive}{\value{page}}
+\pagenumbering{arabic}
+\include{02_Textteil/00_Inhalt_Expose}
+
+\pagenumbering{Roman}
+
+\setcounter{page}{\value{romanConsecutive}}
+\printbibliography[title={Literaturverzeichnis}]
+
+\usestandardtocs
+\bookmarksetup{startatroot}% siehe bookmark-Anleitung
+
+\end{document}

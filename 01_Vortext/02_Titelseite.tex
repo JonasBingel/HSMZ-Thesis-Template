@@ -1,0 +1,45 @@
+% Erklärender Text zu dieser Datei --------------------------------------------------------
+% Die Datei 02_Titelseite.tex dient der Definition der Titelseite.
+% Alle Angaben auf der Titelseite werden mit Informationen aus Metadaten.tex gefüllt
+% Solange das Design der Titelseite nicht angepasst werden soll, sind in dieser Datei keine manuellen Änderungen notwendig.
+% -----------------------------------------------------------------------------------------
+\begin{titlepage}
+
+\begin{minipage}{\textwidth}
+		\noindent \hfill \includegraphics{\logo}
+\end{minipage}
+\vspace{6em}
+
+\begin{center}
+    {\huge \art}
+    
+    {\Large Studiengang \studiengang}
+    
+    \vspace{4em}
+    
+    \textbf{{\Large \titel}}
+    
+    \vspace{4em}
+    
+    \hochschule
+    
+    \hochschulezusatz
+
+    Fachbereich \fachbereich
+    
+    \vspace{6em}
+
+	\begin{minipage}{\textwidth}
+		\begin{tabbing}
+		
+		Vorgelegt von:  \hspace*{2em}\= \autor \\
+		\> \strasseAutor \\
+        \> \stadtAutor \\
+        \> Matrikel-Nr. \matrikelnr \\
+        Vorgelegt bei: \> \betreuer \\
+        Eingereicht am: \> \datumAbgabe
+		\end{tabbing}
+
+	\end{minipage}
+\end{center}
+\end{titlepage}

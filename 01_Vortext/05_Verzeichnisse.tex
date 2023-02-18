@@ -1,0 +1,33 @@
+% Erklärender Text zu dieser Datei --------------------------------------------------------
+% Die Datei 05_Verzeichnisse.tex dient der Definition der zu generierenden Verzeichnisse und deren Reihenfolge.
+% Wenn einzelne Verzeichnisse nicht generiert werden sollen, sind die entsprechenden Anweisungen auszukommentieren.
+% -----------------------------------------------------------------------------------------
+
+% Inhaltsverzeichnis ----------------------------------------------------------------------
+\pdfbookmark{Inhaltsverzeichnis}{inhaltsverzeichnis}
+\tableofcontents
+
+% Abbildungsverzeichnis -------------------------------------------------------------------
+\listoffigures
+
+% Tabellenverzeichnis ---------------------------------------------------------------------
+\listoftables
+
+% Abkuerzungsverzeichnis ------------------------------------------------------------------
+
+\newcommand{\abksvz}{Abk"urzungsverzeichnis}
+\chapter*{\abksvz}
+\addchaptertocentry{}{\abksvz}
+\input{01_Vortext/06_Abkuerzungen}
+
+% Symbolverzeichnis -----------------------------------------------------------------------
+\printnomenclature
+
+% Formelverzeichnis -----------------------------------------------------------------------
+\listofequations
+
+% Listingverzeichnis ----------------------------------------------------------------------
+\listoflistings
+
+% Algorithmenverzeichnis ------------------------------------------------------------------
+\listofalgorithms

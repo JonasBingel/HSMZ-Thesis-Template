@@ -1,0 +1,79 @@
+% Erklärender Text zu dieser Datei --------------------------------------------------------
+% Die Datei 00_Inhalt_Expose.tex dient dem Schreiben des Expose.
+% Die Vorlage enthält bereits typische Abschnitte eines Exposes, sodass diese nur noch ausgefüllt werden müssen.
+%
+% Weitere Abschnitte sind möglich und sollten mit dem Betreuer abgestimmt werden.
+% Beispiele für weitere Abschnitte sind: Relevanz und Aktualität des Themas, Theoretischer Hintergrund oder Zeitplanung
+% -----------------------------------------------------------------------------------------
+
+\section*{Beschreibung des Themas}
+In diesem Abschnitt wird das Thema in mindestens 2-3 Sätzen beschrieben. 
+Ziel ist es ein Verständnis für das Thema zu geben und dieses grob zu verorten.
+
+\section*{Forschungsfrage}
+In diesem Abschnitt wird die Forschungsfrage der Arbeit formuliert. 
+Diese sollte von praktischer oder wissenschaftlicher Relevanz sein und einen allgemeinen Charakter haben.
+Im Zuge einer Forschungsfrage können auch weitere Fragestellungen betrachtet werden, die gelistet werden sollten. 
+\begin{itemize}
+    \item Untergeordnete Fragestellung 1
+    \item Untergeordnete Fragestellung 2
+    \item Untergeordnete Fragestellung 3
+\end{itemize}
+
+\section*{Methodik und Vorgehen}
+Beschreibung der Vorgehensweise, die zur Beantwortung der Forschungsfrage genutzt wird. 
+Beispielsweise Literaturuntersuchung, Implementierung von Algorithmen oder die Auswertung von Fallbeispielen.
+
+\pagebreak
+\section*{Vorl"aufige Gliederung}
+% Die nachfolgende Gliederung ist nur ein Beispiel, damit die Befehle zur Erstellung der Gliederung gezeigt werden können.
+% Die folgenden zwei Zeilen dienen der richtigen Nummerierung der Aufzählungsebenen
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+\begin{enumerate}
+    \item Einleitung
+        \begin{enumerate}
+        \item Motivation
+        \item Ziele und Forschungsfrage
+        \item Aufbau der Arbeit
+        \end{enumerate}
+    \item Grundlagen
+        \begin{enumerate}
+        \item Reinforcement Learning
+            \begin{enumerate}
+            \item Begriffserkl"arung und Verortung
+            \item Markov Decision Process
+            \item Dynamic Programming
+            \item Temporal Difference Learning
+            \item Exploitation vs Exploration
+            \end{enumerate}
+        \item Q-Learning
+        \item SARSA      
+        \item MiniMax-Algorithmus
+        \item Tic-Tac-Toe
+            \begin{enumerate}
+            \item Spielerkl"arung
+            \item Anwendbare Reinforcement Learning Algorithmen
+            \end{enumerate}
+        \end{enumerate}
+    \item Methodik und Funktionsweise der Algorithmen
+        \begin{enumerate}
+        \item Spielfeld
+        \item Agent Q-Learning
+        \item Agent SARSA
+        \item Trainingsaufbau und Evaluationsmetriken
+        \end{enumerate}
+    \item Implementierung
+    \item Diskussion und Auswertung der Ergebnisse
+        \begin{enumerate}
+        \item Auswertung des Q-Learning Agenten
+        \item Auswertung des SARSA Agenten
+        \end{enumerate}
+    \item Konklusion
+        \begin{enumerate}
+        \item Beantwortung der Forschungsfragen
+        \item Kritische Betrachtung der Inhalte
+        \item Anmerkungen f"ur k"unftige Arbeiten
+        \end{enumerate}   
+\end{enumerate}
+
