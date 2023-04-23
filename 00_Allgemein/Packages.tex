@@ -54,15 +54,17 @@
 
 % Literaturverzeichnis und Quellenverwaltung mittels biblatex
 %TODO Änderungen des Zitationsstils und Literaturverzeichnisses
-\usepackage[%
-backend=biber,
-style=ieee,
-dashed=false,
-%TODO Für APA-Stil die obenstehende Konfiguration auskommentieren und Kommentare von nachfolgenden Zeilen entfernen
-%sortlocale=auto,
-%sorting=nyt,
-%style=apa
-]{biblatex}
+% Zitationsstil hier auswählen:
+
+\newcommand{\ZitatStil}{apa} % (apa oder ieee)
+
+\ifthenelse{\equal{\ZitatStil}{apa}}{%
+  \usepackage[sortlocale=auto,sorting=nyt,style=apa]{biblatex}%
+}{
+\ifthenelse{\equal{\ZitatStil}{iee}}{%
+  \usepackage[backend=biber,style=ieee,dashed=false,]{biblatex}%
+}}
+
 
 % Verwalten von Abkuerzungen und einem Abkuerzungsverzeichnis
 \usepackage[printonlyused]{acronym} % https://www.ctan.org/pkg/acronym
