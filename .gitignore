@@ -1,0 +1,19 @@
+# artefacts
+*.atoc
+*.aux
+*.bcf
+*.fdb_latexmk
+*.fls
+*.log
+*.loa
+*.loe
+*.lof
+*.lot
+*.out
+*.run.xml
+*.lol
+*.nlo
+*.pdf
+*.toc
+*.synctex.gz
+*.tdo
