@@ -25,7 +25,7 @@ Dies ist gut zur Pflege des Literaturverzeichnisses während der Bearbeitung, ab
 
 Fußnoten können ebenfalls gesetzt werden mit dem Befehl \texttt{footnote}.\footnote{Fußnoten funktionieren}
 Soll eine Fußnote in der Caption eines Artefakts verwendet werden, um deren Quelle anzugeben, ist ein Workaround notwendig.
-Dieser Workaround wird am Beispiel von \cref{fig:example} vorgestellt. Zur Übersichtlichkeit wurde für Artefakte ein Verzeichnis 04\_Artefakte angelegt.
+%Dieser Workaround wird am Beispiel von \cref{fig:example} vorgestellt. Zur Übersichtlichkeit wurde für Artefakte ein Verzeichnis 04\_Artefakte angelegt.
 
 % In der Caption der Figure wird mit \protect\footnotemark eine Fußnote platziert. Der Text wird außerhalb der figure-Umgebung hinzugefügt mittels \footnotetext
 \begin{figure}[h]
@@ -36,14 +36,14 @@ Dieser Workaround wird am Beispiel von \cref{fig:example} vorgestellt. Zur Über
 \end{figure}
 \footnotetext{entnommen aus \cite[S. 0]{ertelIntroductionArtificialIntelligence2017}}
 
-Neben Abbildungen können auch Tabellen erstellt werden, wíe \cref{tab:shortsample}. 
+%Neben Abbildungen können auch Tabellen erstellt werden, wíe \cref{tab:shortsample}. 
 Zur leichteren Erstellung von Tabellen gibt es im Internet entsprechende Tools. 
 Diese müssen dann nur noch geringfügig angepasst werden. 
-Im \cref{app:longtable} ist ein Beispiel für eine Tabelle, die größer als eine Seite ist und mittels \texttt{longtable} erstellt wurde.
+%Im \cref{app:longtable} ist ein Beispiel für eine Tabelle, die größer als eine Seite ist und mittels \texttt{longtable} erstellt wurde.
 
 \input{04_Artefakte/02_Tabellen/ShortSample}
 
-Außerdem können Gleichungen notiert werden, wie in \cref{eq:culomb} das Coloumb-Gesetz.
+%Außerdem können Gleichungen notiert werden, wie in \cref{eq:culomb} das Coloumb-Gesetz.
 Diese Gleichung wurde gewählt, um das Symbolverzeichnis zu füllen. 
 Die eigentliche Definition der Nomenklatur erfolgt in \texttt{Nomenklatur.tex} im \texttt{Verzeichnis 00\_Allgemein}.
 
@@ -56,7 +56,7 @@ Die eigentliche Definition der Nomenklatur erfolgt in \texttt{Nomenklatur.tex} i
 Das nächste Artefakt ist ein Algorithmus.
 Die Darstellung von Algorihtmen erfolgt in dieser Arbeit mittels dem Package Algorithm2e.
 Algorithmen können ebenfalls referenziert werden, jedoch muss der Befehl \texttt{ref} genutzt werden.
-Ein Beispiel ist der Algorithmus \ref{alg:howto}.
+%Ein Beispiel ist der Algorithmus \ref{alg:howto}.
 
 \input{04_Artefakte/04_Algorithmen/Algorithmus_Beispiel}
 
@@ -64,7 +64,7 @@ Zum Einbinden von Source code wird das Paket minted genutzt.
 Für die Programmiersprache Java ist bereits ein Stil zur Darstellung in \texttt{Packages.tex} definiert.
 Weitere Programmiersprachen können genau so definiert werden. Entsprechende Hinweise gibt es in der 
 \href{https://www.ctan.org/pkg/minted}{Dokumentation von minted}.
-In \cref{listing:1} wird ein simples HelloWorld-Programm gezeigt, während \cref{app:longlisting} ein längeres Beispiel zeigt, dass über mehrere Seiten geht.
+%In \cref{listing:1} wird ein simples HelloWorld-Programm gezeigt, während \cref{app:longlisting} ein längeres Beispiel zeigt, dass über mehrere Seiten geht.
 
 \begin{listing}[h]
 \caption{Hello World Example in Java}
