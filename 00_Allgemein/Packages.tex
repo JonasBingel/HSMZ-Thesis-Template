@@ -56,12 +56,12 @@
 %TODO Änderungen des Zitationsstils und Literaturverzeichnisses
 % Zitationsstil hier auswählen:
 
-\newcommand{\ZitatStil}{apa} % (apa oder ieee)
+\newcommand{\ZitatStil}{ieee} % (apa oder ieee)
 
 \ifthenelse{\equal{\ZitatStil}{apa}}{%
   \usepackage[sortlocale=auto,sorting=nyt,style=apa]{biblatex}%
 }{
-\ifthenelse{\equal{\ZitatStil}{iee}}{%
+\ifthenelse{\equal{\ZitatStil}{ieee}}{%
   \usepackage[backend=biber,style=ieee,dashed=false,]{biblatex}%
 }}
 
