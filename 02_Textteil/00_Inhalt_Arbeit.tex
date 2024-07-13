@@ -7,71 +7,85 @@
 %
 % Derzeit enthält die Datei Beispiele für die Features der LateX-Vorlage.
 % -----------------------------------------------------------------------------------------
-\chapter{Beispiele}
+% \chapter{Beispiele}
 
-Dieses Kapitel enthält einige Beispiele , wie in dieser \LaTeX-Vorlage Artefakte dargestellt und referenziert werden können.
-Zunächst soll die Verwendung von Abkürzungen gezeigt werden am Beispiel von \ac{API} und \ac{ML}.
-Insbesondere \ac{ML} ist dabei interessant, da dort noch eine deutsche Übersetzung angegeben ist. Abkürzungen werden im Vortext in \texttt{Abkuerzungen.tex} definiert und automatisch in das Abkürzungsverzeichnis aufgenommen, wenn diese in der Arbeit verwendet werden.
+% Dieses Kapitel enthält einige Beispiele , wie in dieser \LaTeX-Vorlage Artefakte dargestellt und referenziert werden können.
+% Zunächst soll die Verwendung von Abkürzungen gezeigt werden am Beispiel von \ac{API} und \ac{ML}.
+% Insbesondere \ac{ML} ist dabei interessant, da dort noch eine deutsche Übersetzung angegeben ist. Abkürzungen werden im Vortext in \texttt{Abkuerzungen.tex} definiert und automatisch in das Abkürzungsverzeichnis aufgenommen, wenn diese in der Arbeit verwendet werden.
 
-Die Zitation in dieser Arbeit erfolgt mit dem Befehl \texttt{cite} \cite[S. 0]{ertelIntroductionArtificialIntelligence2017}.
-Der Zitationsstil kann in \texttt{Packages.tex} geändert werden beim Import des Packages \texttt{biblatex}.
-Als Standard ist derzeit IEE eingetragen. 
-Notwendige Änderungen zur Verwendung von APA sind als Kommentar dargestellt.
-Die Änderung des Zitationsstils beeinflusst auch die Darstellung im Literaturverzeichnis.
-In das Literaturverzeichnis werden nur die Quellen aufgenommen, die im Text zitiert werden.
-Die Quellen werden in \texttt{Bachelorarbeit.tex} eingeladen.
-Außerdem wird dort durch den Befehl \texttt{notcite} das Verhalten geändert, sodass alle Quellen gelistet werden.
-Dies ist gut zur Pflege des Literaturverzeichnisses während der Bearbeitung, aber sollte bei der Abgabe entfernt werden.
+% Die Zitation in dieser Arbeit erfolgt mit dem Befehl \texttt{cite} \cite[S. 0]{ertelIntroductionArtificialIntelligence2017}.
+% Der Zitationsstil kann in \texttt{Packages.tex} geändert werden beim Import des Packages \texttt{biblatex}.
+% Als Standard ist derzeit IEE eingetragen. 
+% Notwendige Änderungen zur Verwendung von APA sind als Kommentar dargestellt.
+% Die Änderung des Zitationsstils beeinflusst auch die Darstellung im Literaturverzeichnis.
+% In das Literaturverzeichnis werden nur die Quellen aufgenommen, die im Text zitiert werden.
+% Die Quellen werden in \texttt{Bachelorarbeit.tex} eingeladen.
+% Außerdem wird dort durch den Befehl \texttt{notcite} das Verhalten geändert, sodass alle Quellen gelistet werden.
+% Dies ist gut zur Pflege des Literaturverzeichnisses während der Bearbeitung, aber sollte bei der Abgabe entfernt werden.
 
-Fußnoten können ebenfalls gesetzt werden mit dem Befehl \texttt{footnote}.\footnote{Fußnoten funktionieren}
-Soll eine Fußnote in der Caption eines Artefakts verwendet werden, um deren Quelle anzugeben, ist ein Workaround notwendig.
-%Dieser Workaround wird am Beispiel von \cref{fig:example} vorgestellt. Zur Übersichtlichkeit wurde für Artefakte ein Verzeichnis 04\_Artefakte angelegt.
+% Fußnoten können ebenfalls gesetzt werden mit dem Befehl \texttt{footnote}.\footnote{Fußnoten funktionieren}
+% Soll eine Fußnote in der Caption eines Artefakts verwendet werden, um deren Quelle anzugeben, ist ein Workaround notwendig.
+% %Dieser Workaround wird am Beispiel von \cref{fig:example} vorgestellt. Zur Übersichtlichkeit wurde für Artefakte ein Verzeichnis 04\_Artefakte angelegt.
 
-% In der Caption der Figure wird mit \protect\footnotemark eine Fußnote platziert. Der Text wird außerhalb der figure-Umgebung hinzugefügt mittels \footnotetext
-\begin{figure}[h]
-\centering
-\rule{.5\textwidth}{1cm}
-\caption[{Beispiel Abbildung}]{Beispiel Abbildung mit Fußnote\protect\footnotemark}
-\label{fig:example}
-\end{figure}
-\footnotetext{entnommen aus \cite[S. 0]{ertelIntroductionArtificialIntelligence2017}}
+% % In der Caption der Figure wird mit \protect\footnotemark eine Fußnote platziert. Der Text wird außerhalb der figure-Umgebung hinzugefügt mittels \footnotetext
+% \begin{figure}[h]
+% \centering
+% \rule{.5\textwidth}{1cm}
+% \caption[{Beispiel Abbildung}]{Beispiel Abbildung mit Fußnote\protect\footnotemark}
+% \label{fig:example}
+% \end{figure}
+% \footnotetext{entnommen aus \cite[S. 0]{ertelIntroductionArtificialIntelligence2017}}
 
-%Neben Abbildungen können auch Tabellen erstellt werden, wíe \cref{tab:shortsample}. 
-Zur leichteren Erstellung von Tabellen gibt es im Internet entsprechende Tools. 
-Diese müssen dann nur noch geringfügig angepasst werden. 
-%Im \cref{app:longtable} ist ein Beispiel für eine Tabelle, die größer als eine Seite ist und mittels \texttt{longtable} erstellt wurde.
+% %Neben Abbildungen können auch Tabellen erstellt werden, wíe \cref{tab:shortsample}. 
+% Zur leichteren Erstellung von Tabellen gibt es im Internet entsprechende Tools. 
+% Diese müssen dann nur noch geringfügig angepasst werden. 
+% %Im \cref{app:longtable} ist ein Beispiel für eine Tabelle, die größer als eine Seite ist und mittels \texttt{longtable} erstellt wurde.
 
-\input{04_Artefakte/02_Tabellen/ShortSample}
+% \input{04_Artefakte/02_Tabellen/ShortSample}
 
-%Außerdem können Gleichungen notiert werden, wie in \cref{eq:culomb} das Coloumb-Gesetz.
-Diese Gleichung wurde gewählt, um das Symbolverzeichnis zu füllen. 
-Die eigentliche Definition der Nomenklatur erfolgt in \texttt{Nomenklatur.tex} im \texttt{Verzeichnis 00\_Allgemein}.
+% %Außerdem können Gleichungen notiert werden, wie in \cref{eq:culomb} das Coloumb-Gesetz.
+% Diese Gleichung wurde gewählt, um das Symbolverzeichnis zu füllen. 
+% Die eigentliche Definition der Nomenklatur erfolgt in \texttt{Nomenklatur.tex} im \texttt{Verzeichnis 00\_Allgemein}.
 
-\begin{equation}
-    \label{eq:culomb}
-    \equationentry{Coulomb-Gesetz}
-    F = \frac{1}{4\pi\epsilon_0}\cdot\frac{Q_1Q_2}{r^2}
-\end{equation}
+% \begin{equation}
+%     \label{eq:culomb}
+%     \equationentry{Coulomb-Gesetz}
+%     F = \frac{1}{4\pi\epsilon_0}\cdot\frac{Q_1Q_2}{r^2}
+% \end{equation}
 
-Das nächste Artefakt ist ein Algorithmus.
-Die Darstellung von Algorihtmen erfolgt in dieser Arbeit mittels dem Package Algorithm2e.
-Algorithmen können ebenfalls referenziert werden, jedoch muss der Befehl \texttt{ref} genutzt werden.
-%Ein Beispiel ist der Algorithmus \ref{alg:howto}.
+% Das nächste Artefakt ist ein Algorithmus.
+% Die Darstellung von Algorihtmen erfolgt in dieser Arbeit mittels dem Package Algorithm2e.
+% Algorithmen können ebenfalls referenziert werden, jedoch muss der Befehl \texttt{ref} genutzt werden.
+% %Ein Beispiel ist der Algorithmus \ref{alg:howto}.
 
-\input{04_Artefakte/04_Algorithmen/Algorithmus_Beispiel}
+% \input{04_Artefakte/04_Algorithmen/Algorithmus_Beispiel}
 
-Zum Einbinden von Source code wird das Paket minted genutzt. 
-Für die Programmiersprache Java ist bereits ein Stil zur Darstellung in \texttt{Packages.tex} definiert.
-Weitere Programmiersprachen können genau so definiert werden. Entsprechende Hinweise gibt es in der 
-\href{https://www.ctan.org/pkg/minted}{Dokumentation von minted}.
-%In \cref{listing:1} wird ein simples HelloWorld-Programm gezeigt, während \cref{app:longlisting} ein längeres Beispiel zeigt, dass über mehrere Seiten geht.
+% Zum Einbinden von Source code wird das Paket minted genutzt. 
+% Für die Programmiersprache Java ist bereits ein Stil zur Darstellung in \texttt{Packages.tex} definiert.
+% Weitere Programmiersprachen können genau so definiert werden. Entsprechende Hinweise gibt es in der 
+% \href{https://www.ctan.org/pkg/minted}{Dokumentation von minted}.
+% %In \cref{listing:1} wird ein simples HelloWorld-Programm gezeigt, während \cref{app:longlisting} ein längeres Beispiel zeigt, dass über mehrere Seiten geht.
 
-\begin{listing}[h]
-\caption{Hello World Example in Java}
-\label{listing:1}
-\inputminted{java}{04_Artefakte/03_Listings/HelloWorld.java}
-\end{listing}
+% \begin{listing}[h\chapter{Durchführung der Umfrage und der Datenaufbereitung}]
+% \caption{Hello World Example in Java}
+% \label{listing:1}
+% \inputminted{java}{04_Artefakte/03_Listings/HelloWorld.java}
+% \end{listing}
 
-\blinddocument
+% \blinddocument
 
+\input{02_Textteil/10_Einleitung}
 
+\input{02_Textteil/20_Durchführung}
+
+\input{02_Textteil/30_Deskriptive_Analyse}
+
+\input{02_Textteil/40_Hypothese_4.tex}
+
+\input{02_Textteil/50_Hypothese_5.tex}
+
+\input{02_Textteil/60_Hypothese_9.tex}
+
+\input{02_Textteil/70_Diskussion}
+
+\input{02_Textteil/80_Fazit}
