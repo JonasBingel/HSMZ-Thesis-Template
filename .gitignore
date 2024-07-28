@@ -1,0 +1,22 @@
+# Artefakte
+*.atoc
+*.aux
+*.bcf
+*.fdb_latexmk
+*.fls
+*.log
+*.loa
+*.loe
+*.lof
+*.lot
+*.out
+*.run.xml
+*.lol
+*.nlo
+Arbeit.pdf
+*.toc
+*.synctex.gz
+*.tdo
+*.bbl
+_minted-Arbeit
+*.blg
